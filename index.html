@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Administrateur Réseau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-in-out;
+        }
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px #ffffff; }
+            50% { text-shadow: 0 0 20px #1e3a8a; }
+            100% { text-shadow: 0 0 5px #ffffff; }
+        }
+        .glow-text:hover {
+            animation: textGlow 1.5s infinite alternate;
+        }
+        #skills div:hover, #projects div:hover {
+            background-color: #e0f2fe;
+        }
+        nav a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-blue-100 text-blue-900 font-sans">
+    <header class="bg-blue-900 text-white p-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-4xl font-extrabold glow-text">AdminRéseau</h1>
+            <nav class="space-x-8">
+                <a href="#about" class="hover:text-gray-300">À propos</a>
+                <a href="#skills" class="hover:text-gray-300">Compétences</a>
+                <a href="#projects" class="hover:text-gray-300">Projets</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="container mx-auto my-16 p-8 bg-white rounded-lg shadow-lg fade-in">
+        <h2 class="text-3xl font-semibold mb-6 text-center">À propos de moi</h2>
+        <div class="flex space-x-8 items-center">
+            <img src="image1.jpg" alt="Photo de profil" class="w-32 h-32 rounded-full shadow-md">
+            <p class="text-lg leading-relaxed max-w-2xl">Je suis LOLA SEMERETH Rebecca Administrateur Réseau passionné par l'optimisation des infrastructures, la sécurité et la gestion des systèmes. Mon expertise inclut la gestion des routeurs, des commutateurs, et des environnements cloud.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="container mx-auto my-16 p-8 bg-white rounded-lg shadow-lg fade-in text-center">
+        <h2 class="text-3xl font-semibold mb-6">Compétences</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-5 bg-blue-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">Gestion Réseau</h3>
+                <p>Configuration et maintenance des équipements réseau.</p>
+            </div>
+            <div class="p-5 bg-blue-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">Sécurité Informatique</h3>
+                <p>Implémentation de pare-feu, VPN et protocoles sécurisés.</p>
+            </div>
+            <div class="p-5 bg-blue-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">Cloud Computing</h3>
+                <p>Gestion d'infrastructures virtualisées et cloud.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container mx-auto my-16 p-8 bg-white rounded-lg shadow-lg fade-in text-center">
+        <h2 class="text-3xl font-semibold mb-6">Projets</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-5 bg-blue-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">Projet Réseau Sécurisé</h3>
+                <p>Conception et déploiement d'une infrastructure sécurisée pour une entreprise.</p>
+            </div>
+            <div class="p-5 bg-blue-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">Migration vers le Cloud</h3>
+                <p>Migration complète vers AWS et gestion des services cloud.</p>
+            </div>
+            <div class="p-5 bg-blue-100 rounded-lg shadow">
+                <h3 class="text-xl font-bold mb-2">VPN pour Accès Distant</h3>
+                <p>Configuration de VPN pour une connectivité sécurisée à distance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container mx-auto my-16 p-8 bg-white rounded-lg shadow-lg fade-in text-center">
+        <h2 class="text-3xl font-semibold mb-6">Contact</h2>
+        <p class="text-lg">Email: <a href="mailto:admin.reseau@example.com" class="text-blue-600 hover:underline">lolasemerethrebecca@gmail.com</a></p>
+        <p class="text-lg mb-4">Téléphone: +221 77 758 82 95</p>
+        <a href="SEMERETH (1).pdf" download class="bg-blue-700 text-white py-2 px-4 rounded-lg hover:bg-blue-800">Télécharger mon CV</a>
+    </section>
+
+    <footer class="bg-blue-900 text-white text-center p-6">
+        <p>&copy; 2025 AdminiRéseau. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const elements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
